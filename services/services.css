@@ -294,6 +294,8 @@ section[id] { scroll-margin-top: 92px; }
 .dropdown a:hover { background: #F3F1FF; color: #1A194D; }
 .dropdown a::after { content: none !important; }
 .drop-cols { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 4px 20px; }
+.dropdown.narrow { width: 330px; }
+.dropdown.narrow .drop-cols { grid-template-columns: 1fr; }
 .drop-group h5 { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #A8481E; margin: 2px 0 7px; padding: 0 12px; }
 .dropdown a.drop-all { margin-top: 12px; border-top: 1px solid #E6E2F5; text-align: center; color: #A8481E; font-weight: 700; padding: 12px 12px 6px; }
 .mnav-ghead { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--peach, #FFBE96); padding: 13px 4px 3px 16px; margin: 0; }
