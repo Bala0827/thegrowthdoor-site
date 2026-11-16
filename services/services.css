@@ -337,3 +337,33 @@ section[id] { scroll-margin-top: 92px; }
 .article-body li{margin-bottom:9px}
 .article-body a{font-weight:600}
 @media (max-width:560px){.article-body{font-size:1.02rem}.article-body h2{font-size:1.28rem}}
+
+/* --- Phase 2: Omnichannel CRM landing (/whatsapp-crm/) + service cross-link band --- */
+.xlink-band{background:#FFF6EE;padding:16px 0}
+.xlink-band p{text-align:center;font-size:.95rem;color:#3F3C7E}
+.xlink-band a{font-weight:600}
+.crm-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.crm-chip{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}
+.crm-chip h3{font-size:1rem;margin-bottom:6px;color:var(--navy)}
+.crm-chip p{font-size:.9rem}
+.crm-note{margin-top:14px;font-size:.86rem;color:var(--muted)}
+.crm-proof{background:var(--navy,#1A194D);border-radius:18px;padding:28px 32px}
+.crm-proof h2{color:#fff;margin-bottom:10px}
+.crm-proof p{color:#D9D6FF;max-width:840px}
+.crm-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.crm-table th,.crm-table td{padding:13px 16px;text-align:left;font-size:.94rem;border-bottom:1px solid var(--line);vertical-align:top}
+.crm-table th{background:#FBF7F2;color:var(--navy)}
+.crm-table tr:last-child td{border-bottom:none}
+.crm-price-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.crm-price-grid .price-block{flex-direction:column;height:100%;gap:18px}
+.crm-price-grid .price-cta{margin-top:auto}
+.crm-featured{border:2px solid var(--orange,#F36C2A)}
+.crm-pill{display:inline-block;background:var(--orange,#F36C2A);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.crm-pill.light{background:#FFF1E6;color:#B34A12}
+.crm-who{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.crm-who .card h3{margin-bottom:6px}
+.crm-link{display:inline-block;margin-top:12px;font-weight:600}
+.crm-media .cw-search{display:none}
+.crm-media .mk-tag{font-size:.62rem;letter-spacing:.05em;padding:4px 9px;white-space:nowrap}
+@media(max-width:900px){.crm-chips{grid-template-columns:repeat(2,1fr)}.crm-price-grid{grid-template-columns:1fr}.crm-who{grid-template-columns:1fr}}
+@media(max-width:560px){.crm-chips{grid-template-columns:1fr}.crm-table th,.crm-table td{padding:10px 12px;font-size:.88rem}.crm-proof{padding:22px 20px}}
