@@ -347,12 +347,24 @@ a.strip-name.product:hover, a.strip-name.product:focus-visible { color: var(--or
 .proc-progress span { display: block; height: 100%; width: 0; background: var(--orange); border-radius: 99px; }
 
 /* ---------- S10: Numbers band ---------- */
-.numbers { background: var(--navy); padding: 64px 0; }
+/* Light warm band (Bala 2026-11-16): separates the navy hero/strip zone from
+   the navy enquiry scene below; navy numbers, orange plus accents. */
+.numbers { background: #FFF6EE; padding: 64px 0; }
 .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; text-align: center; }
-.num-value { font-size: clamp(2.4rem, 5.4vw, 3.6rem); font-weight: 800; color: #fff; line-height: 1; }
+.num-value { font-size: clamp(2.4rem, 5.4vw, 3.6rem); font-weight: 800; color: var(--navy); line-height: 1; }
 .num-value .plus { color: var(--orange); }
-.num-label { color: #c9c5f5; margin-top: 9px; font-size: .97rem; }
-.num-sub { color: #8f8bd0; font-size: .8rem; margin-top: 4px; }
+.num-label { color: #3F3C7E; margin-top: 9px; font-size: .97rem; }
+.num-sub { color: var(--rust); font-weight: 600; font-size: .8rem; margin-top: 4px; }
+@media (min-width: 768px) {
+  .num-sub { white-space: nowrap; }
+}
+.br-m { display: none; }
+@media (max-width: 767px) {
+  /* Controlled two-line break for the channel list: "Google · Website" /
+     "WhatsApp · Instagram", no dangling separator (Bala 2026-11-16). */
+  .br-m { display: block; }
+  .sep-d { display: none; }
+}
 
 /* ---------- Pricing hint ---------- */
 .pricing-hint { background: var(--pale); }
@@ -656,12 +668,63 @@ a.strip-name.product:hover, a.strip-name.product:focus-visible { color: var(--or
 }
 @media (max-width: 640px) {
   .sol-grid { grid-template-columns: 1fr; }
-  .home-hero h1.h1-lines { font-size: clamp(1.9rem, 8.8vw, 2.5rem); }
   .prod-card { padding: 20px; }
   .prod-mock { padding: 10px; }
   .auto-proof { padding: 20px; }
 }
 
+/* Responsive text variants (Bala mobile hero correction 2026-11-16): the
+   mobile span is a presentational variant; assistive tech and the canonical
+   reading always get the desktop text. */
+.txt-m { display: none; }
+
+/* Mobile hero refinement (<=767px, Bala 2026-11-16): no photo, navy gradient,
+   compact eyebrow and sub, full-width stacked CTAs. Desktop hero untouched. */
+@media (max-width: 767px) {
+  .txt-d { display: none; }
+  .txt-m { display: inline; }
+  .home-hero { min-height: 0; background: linear-gradient(160deg, #262266 0%, #1A194D 55%, #100E33 100%); }
+  .home-hero .hero-photo, .home-hero .hero-shade { display: none; }
+  .home-hero .container { padding-top: 40px; padding-bottom: 48px; }
+  .home-hero h1.h1-lines { font-size: clamp(1.875rem, 8.6vw, 2.125rem); line-height: 1.15; }
+  .home-hero .eyebrow { font-size: .78rem; letter-spacing: .12em; }
+  .home-hero .hero-sub { font-size: 1rem; line-height: 1.55; margin-top: 16px; }
+  .home-hero .hero-ctas { flex-direction: column; gap: 12px; margin-top: 26px; }
+  .home-hero .hero-ctas .btn { width: 100%; text-align: center; }
+  .home-hero .hero-wa { margin-top: 20px; }
+}
+
 .prod-card, .prod-mock, .auto-card, .sol-card { min-width: 0; }
 .prod-mock .wainbox, .prod-mock .mk-browser { max-width: 100%; }
 .prod-mock .wai-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Products section width + mock alignment (Bala 2026-11-16): wider container
+   for this section only; cards become flex columns and the mock frame flexes
+   so both product mocks render at equal height and card content aligns. */
+.container-wide { max-width: 1400px; }
+.prod-card { display: flex; flex-direction: column; }
+.prod-mock { flex: 1 0 auto; display: flex; }
+.prod-mock .wainbox { aspect-ratio: auto; flex: 1; }
+.prod-mock .mk-browser { flex: 1; }
+
+/* Product mocks: one fixed frame height on desktop so both cards align
+   (Bala 2026-11-16); card CTAs pin to the card bottom. */
+@media (min-width: 961px) {
+  .prod-mock { height: 474px; flex: none; }
+  .prod-mock .wainbox { height: 100%; }
+  .prod-mock .mk-browser { height: 100%; }
+}
+.prod-card .svc-actions { margin-top: auto; padding-top: 18px; }
+
+/* Automation proof strip text (Bala 2026-11-16): the global p colour rule
+   overrode the strip's inherited light colour; set it directly. */
+.auto-proof p { color: #D9D6FF; }
+
+/* Solutions cards: audience icons + strict alignment (Bala 2026-11-16). */
+.sol-grid { align-items: stretch; }
+.sol-card { display: flex; flex-direction: column; height: 100%; }
+.sol-ic { width: 46px; height: 46px; border-radius: 14px; background: #FFF1E6;
+  display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.sol-ic svg { width: 24px; height: 24px; fill: none; stroke: var(--rust);
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.sol-link { white-space: nowrap; margin-top: auto; padding-top: 14px; }
