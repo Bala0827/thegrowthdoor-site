@@ -367,3 +367,8 @@ section[id] { scroll-margin-top: 92px; }
 .crm-media .mk-tag{font-size:.62rem;letter-spacing:.05em;padding:4px 9px;white-space:nowrap}
 @media(max-width:900px){.crm-chips{grid-template-columns:repeat(2,1fr)}.crm-price-grid{grid-template-columns:1fr}.crm-who{grid-template-columns:1fr}}
 @media(max-width:560px){.crm-chips{grid-template-columns:1fr}.crm-table th,.crm-table td{padding:10px 12px;font-size:.88rem}.crm-proof{padding:22px 20px}}
+
+/* Growmo CRM landing (Phase 2, Priority 2) */
+.growmo-media .mk-tag{font-size:.62rem;letter-spacing:.05em;padding:4px 9px;white-space:nowrap}
+.growmo-price-grid .price-block{grid-template-columns:1fr;gap:20px}
+.growmo-price-grid .price-cta{margin-top:4px}
